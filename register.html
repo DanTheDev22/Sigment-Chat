@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Register</title>
     <link rel="stylesheet" href="css\styles.css">
 </head>
 <body>
     <div class="wrapper">
         <div class="navbar-login-register">
-            <button class="register">
-                <span class="register-text">Register</span>
+            <button class="login" >
+                <span class="login-text">Login</span>
             </button>
         </div>
         <div class="logo-container">
@@ -21,10 +21,16 @@
             <form action="" method="post">
                 <input type="text" placeholder="Username">
                 <br>
-                <input type="password" placeholder="*******">
+                <input type="password" placeholder="Password">
+                <br>
+                <input type="password" placeholder="Confirm your password">
                 <br>
                 <button type="submit" value="">Login</button>
                 <br>
+                <div class="terms">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the <a href="/" target="_blank">Terms and Conditions</a></label>
+                </div>
             </form>
             <p>🔒 Protected by the Signal Protocol
                 <br>

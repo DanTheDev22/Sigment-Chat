@@ -1,28 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
 body {
-    background-color: #0B0C10;
+    background-color: #111;
+    color: #E6E6E6;
     margin: 0;
     padding: 0;
 }
 
-.navbar-register {
+.navbar-login-register {
     position: relative;
     width: 100%;
     height: 100px;
 }
 
-.register {
+.register, .login {
     float: right;
     width: 160px;
     height: 44px;
-    background-color:#1F2833 ;
+    background-color:#1e1e1e ;
     border-radius: 10px;
-    border-color: #66FCF1;
+    border: 2px solid #FF0077;
     margin: 24px 40px;
 }
 
-.register span {
+.navbar-login-register .register:hover, .navbar-login-register .login:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+    background-color: #FF0077; /* Schimbă culoarea pentru un efect de hover */
+    box-shadow: 0 0 15px rgba(255, 0, 119, 0.6); /* Adaugă o umbră neon la hover */
+}
+
+.register span, .login span {
     color: #00FFFF;
 }
 
@@ -40,13 +48,13 @@ body {
 }
 
 .logo-container span {
-    color: #2BD2C4;
+    color: #FF0077;;
     text-align: center;
     line-height: 0.5%;
     opacity: 80%;
-    text-shadow: #66FCF1;
-    font-size: 52px;
+    font-size: 60px;
     font-family: 'Audiowide', sans-serif;
+    animation: glitch 1.5s infinite linear;
 }
 
 .form-container {
@@ -59,29 +67,75 @@ body {
 .form-container form input {
     width: 300px;
     height: 50px;
-    background: #262B30;
+    background: #333;
     text-align: center;
     border-radius: 6px;
-    border: transparent;
+    border: 1px solid #555;
     margin: 8px;
-    color: white;
+    color: #e0e0e0;
     font-size: 16px;
 }
 
+.form-container form input:focus {
+    border: 2px solid #FF0077; 
+    background-color: #1a1a1a; 
+}
+
 .form-container form button {
-    background: #2BD2C4;
+    background: #FF0077;
     margin: 8px;
     width: 304px;
     height: 52px;
-    color: #000000;
+    color: #000;
     text-align: center;
     border-radius: 6px;
     border: transparent;
 }
 
 .form-container p {
-    color: #AAAAAA;
+    color: #999;
     font-size: 14px;
     text-align: center;
     letter-spacing: 1px;
 }
+
+.terms {
+    display: flex;
+    align-items: center;
+    
+}
+
+.terms label {
+    color: white;  
+}
+
+.terms label a {
+    color: inherit;
+}
+
+
+#terms {
+    width: 20px;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-10px, 0);
+  }
+  40% {
+    transform: translate(10px, 0);
+  }
+  60% {
+    transform: translate(-10px, 0);
+  }
+  80% {
+    transform: translate(10px, 0);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
