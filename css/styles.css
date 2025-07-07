@@ -1,11 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
 
 body {
-    background-color: #111;
-    color: #E6E6E6;
+   background-image: linear-gradient(to right top, #1a1a1a, #1b1920, #1c1825, #1f1629, #23132d, #221430, #201432, #1d1535, #131936, #081c35, #011e33, #001f2f);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
     margin: 0;
     padding: 0;
+    font-family: 'Inter', sans-serif;
 }
+
+.wrapper{
+    height:100%;
+}
+
 
 .navbar-login-register {
     position: relative;
@@ -15,23 +26,33 @@ body {
 
 .register, .login {
     float: right;
-    width: 160px;
-    height: 44px;
-    background-color:#1e1e1e ;
+    display: inline-block;
+    text-align: center;
+    width: 120px;
+    height: 40px;
     border-radius: 10px;
-    border: 2px solid #FF0077;
+    border: 1px solid #00E0FF;
     margin: 24px 40px;
+    line-height: 40px;
+    text-decoration: none;
+    color: #00E0FF;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 
-.navbar-login-register .register:hover, .navbar-login-register .login:hover {
+.register:hover, .login:hover {
     transform: scale(1.1);
-    transition: all 0.3s ease-in-out;
-    background-color: #FF0077; /* Schimbă culoarea pentru un efect de hover */
-    box-shadow: 0 0 15px rgba(255, 0, 119, 0.6); /* Adaugă o umbră neon la hover */
+    transition: all 0.3s ease;
+    background-color: #00E0FF22; 
+    box-shadow: 0 0 15px rgba(255, 0, 119, 0.6); 
+    color: #FFFFFF;
+    cursor: pointer;
 }
 
 .register span, .login span {
-    color: #00FFFF;
+    color: #00E0FF;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .logo-container {
@@ -48,48 +69,81 @@ body {
 }
 
 .logo-container span {
-    color: #FF0077;;
+    color: #FF2F92;;
+     text-shadow: 0 0 5px #FF4EC7;
     text-align: center;
     line-height: 0.5%;
     opacity: 80%;
     font-size: 60px;
     font-family: 'Audiowide', sans-serif;
-    animation: glitch 1.5s infinite linear;
+    animation: none;
+}
+
+
+.logo-container span:hover {
+     animation: glitch-soft 2s infinite;
 }
 
 .form-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 60px 0;
+    
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid #222;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0, 224, 255, 0.1);
+    max-width: 300px;
+    margin: auto;
 }
 
 .form-container form input {
     width: 300px;
     height: 50px;
-    background: #333;
+    background: #151515;
     text-align: center;
     border-radius: 6px;
-    border: 1px solid #555;
+    border: 1px solid #2C2C2C;
     margin: 8px;
     color: #e0e0e0;
     font-size: 16px;
+    
+}
+.form-container form input::placeholder {
+    color: #888888;
 }
 
 .form-container form input:focus {
-    border: 2px solid #FF0077; 
-    background-color: #1a1a1a; 
+    border: 1px solid #FF2F92; 
+}
+
+.form-container form label {
+    display: block;
+    color: #FF4EC7; /* Hot pink accent for visibility */
+    font-size: 14px;
+    font-weight: 600;
+    margin: 12px 0 4px 0;
+    letter-spacing: 0.5px;
+    text-align: left;
+    width: 100%;
 }
 
 .form-container form button {
-    background: #FF0077;
+    background: linear-gradient(145deg, #FF0066, #FF4EC7);
     margin: 8px;
     width: 304px;
     height: 52px;
-    color: #000;
+    color: #fff;
     text-align: center;
-    border-radius: 6px;
+    border-radius: 12px;
     border: transparent;
+    transition: transform 0.2s ease;
+}
+
+.form-container form button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 18px rgba(255, 0, 119, 0.8);
 }
 
 .form-container p {
@@ -118,24 +172,10 @@ body {
     width: 20px;
 }
 
-@keyframes glitch {
-  0% {
-    transform: translate(0);
-  }
-  20% {
-    transform: translate(-10px, 0);
-  }
-  40% {
-    transform: translate(10px, 0);
-  }
-  60% {
-    transform: translate(-10px, 0);
-  }
-  80% {
-    transform: translate(10px, 0);
-  }
-  100% {
-    transform: translate(0);
-  }
+@keyframes glitch-soft {
+    0%, 100% { transform: none; }
+    25% { transform: translateX(-3px); }
+    50% { transform: translateX(3px); }
+    75% { transform: translateY(-3px); }
 }
 
