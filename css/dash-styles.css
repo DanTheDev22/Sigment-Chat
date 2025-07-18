@@ -12,17 +12,20 @@ body {
 
 .grid-container {
     display: grid;
-    grid-template-columns: 15% 25% 60%;
+    grid-template-columns: 15% 20% 65%;
     height: 100vh;
 }
 
-
+/* Sidebar */
 
 .sidebar-nav {
     background-image: linear-gradient(to right top, #100c1c, #120f1f, #141222, #161526, #181729, #19192d, #1b1a30, #1c1c34, #1e1e38, #1f1f3d, #212141, #232346);
     display: flex;
     flex-direction: column;
-    
+}
+
+.sidebar-links {
+    margin-left: 10px;
 }
 
 .user-profile {
@@ -37,11 +40,13 @@ body {
 
 .user-name img {
     border-radius: 50px;
+    margin: 10px 10px;
 }
 
 .user-name p {
     color: #E0E0E0;
     font-size: 20px;
+    margin-left: 10px;
 }
 
 .sidebar-links p {
@@ -52,7 +57,15 @@ body {
     color: #FFFFFF;
 }
 
+.sidebar-links p, .team-member span {
+  transition: color 0.3s ease;
+}
+
+/* Teams */
 .teams-section {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    margin-left: 10px;
 }
 
 .teams-section span {
@@ -67,6 +80,42 @@ body {
     color: #FFFFFF;
 }
 
+.team-chat-list {
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+.team-member {
+    display: flex;
+    align-items: center; 
+    padding: 5px 0;
+}
+
+.team-member span {
+    font-size: 18px;
+    padding: 5px;
+}
+
+.add-team-btn { 
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+
+.add-team-btn img {
+    height: 25px;
+    width: 25px;
+}
+
+.add-team-btn:active {
+    transform: scale(0.95); 
+    opacity: 0.8;           
+}
+
+
+/* Feedback */
 .feedback-box {
     margin-top: auto;
     display: flex;
@@ -80,4 +129,142 @@ body {
 .feedback-box p:hover {
     color: #FFFFFF; 
 }
+
+/* Message panel */
+
+.messages-panel { 
+     background-color: #F4F6FA;
+}
+
+.filter-tabs {
+    height: 50px;
+}
+
+.statusButtons {
+    padding: 15px 25px;
+}
+
+.statusButtons button {
+    background-color: #2a2a38;
+    color: #ffffff;
+    height: 50px;
+    height: 30px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.statusButtons button:active {
+    transform: scale(0.95); 
+    opacity: 0.8;
+    background-color: #7f5af0;
+    border: 1px solid #888;
+           
+}
+
+.statusButtons button:hover {
+    background-color: #3f3f58;
+    box-shadow: 0 0 6px #6ec3ff88;
+    cursor: pointer;
+}
+
+
+#open {
+    border: none;
+}
+
+
+#done {
+    border: none;
+    margin-left: 10px;
+}
+
+#unread {
+    background-color: transparent;
+    color: black;
+    border: dotted 2px gray;
+    margin-left: 10px;
+}
+
+.message-list {
+    margin-top: 20px;
+    border-top: 1px solid #d3d3d3;
+    background-color: #f0f2f5;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.message-list ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.message-list ul li {
+    width: 300px;
+    display: flex;
+    flex-direction: column; 
+    gap: 10px; 
+    margin-left: 0;
+}
+
+.message-list button {
+    width: 300px;
+    height: 60px;
+    border: none;
+    border-radius: 5px;
+    background: #A0A2B1;
+    transition: all 0.2s ease;
+}
+
+.message-list button:active {
+    transform: scale(0.95); 
+    opacity: 0.8;           
+}
+
+.message-list button:hover {
+  background-color: #C2C5D1;
+  transform: scale(1.02);
+}
+
+/* Users chat */
+
+.user-chat {
+     display: flex;
+    align-items: center;
+    gap: 12px; /* spațiu între avatar și info-user */
+    justify-content: flex-start; /* nu space-between aici */
+    padding: 10px 14px;
+}
+
+.avatar {
+    align-self: center;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.info-user {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-user .username {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.last-message {
+    font-size: 12px;
+    color: #6b6b6b;
+}
+
+.message-time {
+    font-size: 12px;
+    color: #666666;
+    margin-left: auto;
+}
+
 
