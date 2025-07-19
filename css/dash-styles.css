@@ -268,3 +268,49 @@ body {
 }
 
 
+/* chat panel */
+
+.chat-panel {
+    
+}
+
+.chat-header {
+    width: 100%;
+    height: 50px;
+    display: flex;
+}
+
+.chat-user-info {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.chat-user-info span {
+    margin-left: 10px;
+}
+
+.panel {
+    border-top: 1px solid #d3d3d3;
+}
+
+.message-input-container {
+    width: 870px;
+    height: 70px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.input-tools {
+    display: flex;
+}
+
+#submit {
+    background-image: url("images\share.png");
+    width: 16px;
+    height: 16px;
+}
+
