@@ -201,23 +201,29 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     list-style: none;
+    padding-inline-start: 0;
 }
 
 .message-list ul li {
-    width: 300px;
+    width: 100%;
+    max-width: 450px;
     display: flex;
     flex-direction: column; 
     gap: 10px; 
     margin-left: 0;
+    margin-inline: auto;
 }
 
 .message-list button {
-    width: 300px;
+    width: 90%;
+    max-width: 450px;
     height: 60px;
     border: none;
     border-radius: 5px;
     background: #A0A2B1;
     transition: all 0.2s ease;
+    box-sizing: border-box;
+    margin-inline: auto;
 }
 
 .message-list button:active {
@@ -228,6 +234,19 @@ body {
 .message-list button:hover {
   background-color: #C2C5D1;
   transform: scale(1.02);
+}
+
+@media (max-width: 480px) {
+  .message-list ul li {
+    padding-inline: 10px;
+    max-width: 100%;
+  }
+
+  .message-list button {
+    font-size: 14px;
+    height: auto;
+    padding: 12px;
+  }
 }
 
 /* Users chat */
@@ -267,10 +286,11 @@ body {
     margin-left: auto;
 }
 
-
 /* chat panel */
 
 .chat-panel {
+    display: grid;
+    grid-template-rows: 8% 77% 15%;
     
 }
 
@@ -278,6 +298,7 @@ body {
     width: 100%;
     height: 50px;
     display: flex;
+    justify-content: space-between;
 }
 
 .chat-user-info {
@@ -290,18 +311,64 @@ body {
     margin-left: 10px;
 }
 
+.chat-content {
+    border-top: 1px solid black;
+}
+
 .panel {
     border-top: 1px solid #d3d3d3;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
 }
 
 .message-input-container {
-    width: 870px;
-    height: 70px;
+    width: 100%;
+    max-width: 800px;
+    min-height: 70px;
     border: 1px solid black;
-    border-radius: 5px;
+    border-radius: 8px;
+    padding: 8px 12px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+}
+
+@media (max-width: 768px) {
+    .message-input-container {
+        max-width: 100%;
+        min-height: 60px;
+        padding: 6px 10px;
+    }
+
+    textarea {
+        font-size: 14px;
+    }
+
+    .input-tools button {
+        width: 28px;
+        height: 28px;
+    }
+
+    #submit {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .message-input-container {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .input-tools {
+        justify-content: space-between;
+    }
 }
 
 .input-tools {
