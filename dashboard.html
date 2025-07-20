@@ -78,24 +78,28 @@
                     <span>Lisa Price</span>
                 </div>
                 <div class="chatbox-message-dropdown">
-                    <img src="images\icons8-dropdown-50.png" alt="">
+                    <button class="dropdown-toggle">
+                        <img src="images\bars-solid (1).svg" alt="Menu">
+                    </button>
                     <ul class="dropdown-menu">
                         <li><a href="#">Report</a></li>
+                        <li><a href="#">Delete chat</a></li>
+                        <li><a href="#">Block user</a></li>
                     </ul>
                 </div>
             </div>
             <div class="chat-content">
-                <h4 class="chatbox-message-no-message">You don't have message yet!</h4>
-                <div class="message-item sent">
+                <!-- <h4 class="chatbox-message-no-message">You don't have message yet!</h4> -->
+                <div class="message-item-sent">
                     <span class="message-item-text">
-                        elit. Saepe voluptates nihil beatae doloremque fugiat, eaque dignissimos nam suscipit! Odio neque enim excepturi possimus deserunt, tempore aliquid magni. Aliquid, amet reiciendis?
+                        Salut! Acesta este un mesaj trimis de tine.
                     </span>
                     <span class="message-item-time">08:14</span>
                 </div>
 
-                <div class="message-item received">
+                <div class="message-item-received">
                     <span class="message-item-text">
-                       lit. Saepe voluptates nihil beatae doloremque fugiat, eaque dignissimos nam suscipit! Odio neque enim excepturi possimus deserunt, tempore aliquid magni. Aliquid, amet reiciendis?
+                       Salut! Acesta este un mesaj primit de la celălalt utilizator.
                     </span>
                     <span class="message-item-time">08:14</span>
                 </div>
@@ -104,13 +108,22 @@
                 <form class="message-input-container">
                     <textarea placeholder="Write here your message" required rows="1"></textarea>
                     <div class="input-tools">
-                        <input type="file" id="file-upload" style="display: none">
-                        <button id="reset" type="reset"></button>
-                        <button id="submit" type="submit"></button>
+                        <input type="file" id="file-upload">
+                        <label for="file-upload" id="upload-btn">Upload File</label>
+
+                        <button id="submit" type="submit">
+                            <img src="images\share-solid.svg" alt="" width="30" height="30">
+                        </button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </body>
+
+<script>
+  document.querySelector('.dropdown-toggle').addEventListener('click', function () {
+    this.parentElement.classList.toggle('open');
+  });
+</script>
 </html>
