@@ -344,6 +344,10 @@ body {
     margin-left: 10px;
 }
 
+.chat-content {
+    border-top: 1px solid black;
+}
+
 .chat-settings-dropdown {
     display: inline-block;
     cursor: pointer;
