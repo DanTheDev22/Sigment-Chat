@@ -7,112 +7,112 @@
     <link rel="stylesheet" href="css/dash-styles.css">
 </head>
 <body>
-    <div class="grid-container">
-        <div class="sidebar-nav">
-            <div class="user-profile">
-                <div class="user-name">
+    <div class="dashboard-layout">
+        <div class="sidebar">
+            <div class="sidebar-user-profile">
+                <div class="user-profile-name">
                     <img width="60" src="images\1477353367evDTd.jpg" alt="User Avatar" class="avatar-icon" />
                     <p>Laurent Moreant</p>
                 </div>
-                <!-- TO DO sidebar links -->
-                <div class="sidebar-links">
+                <div class="sidebar-menu-links">
                     <p>Search</p>
                     <p>Settings</p>
                     <p>Change profile</p>
                 </div>
             </div>
-            <div class="teams-section">
+            <div class="sidebar-teams">
                 <span>Your Team</span>
-                <div class="team-chat-list">
-                    <div class="team-member">
+                <div class="team-members-list">
+                    <div class="team-member-item">
                         <img src="images\avatar.png" alt="chat Image" width="25px">
                         <span>Amy Smith</span>
                     </div>
-                    <div class="team-member">
+                    <div class="team-member-item">
                         <img src="images\avatar.png" alt="chat Image" width="25px">
                         <span>Amy Smith</span>
                     </div>
-                    <div class="team-member">
+                    <div class="team-member-item">
                         <img src="images\avatar.png" alt="chat Image" width="25px">
                         <span>Amy Smith</span>
                     </div>
                 </div>
-                <button class="add-team-btn">
+                <button class="add-team-button">
                     <img src="images\add.png" alt="">
                 </button>
             </div>
-            <div class="feedback-box">
+            <div class="sidebar-feedback-box">
                 <img src="images\question.png" alt="icon" width="30px" height="30px">
-                <p> Submit feedback</p>
+                <p> Submit Feedback</p>
             </div>
         </div>
-        <div class="messages-panel">
-            <div class="filter-tabs">
-                <div class="statusButtons">
+        <div class="conversation-list-panel">
+            <div class="conversation-filter-tabs">
+                <div class="conversation-filter-buttons">
                     <button id="open">Open</button>
                     <button id="done">Done</button>
                     <button id="unread">Unread</button>
                 </div>
             </div>
-            <div class="message-list">
+            <div class="conversation-list">
                 <ul>
                     <li>
                         <button>
-                            <div class="user-chat">
+                            <div class="conversation-item">
                                 <img class="avatar" src="images\Ellipse 14.png" alt="">
-                                <div class="info-user">
-                                    <span class="username">lisa Price</span>
-                                    <span class="last-message">Call ended</span>
+                                <div class=".conversation-user-info">
+                                    <span class="conversation-username">lisa Price</span>
+                                    <span class="conversation-last-message">Call ended</span>
                                 </div>
-                                <span class="message-time">9:27 am</span>
+                                <span class="conversation-time">9:27 am</span>
                             </div>
                         </button>
                     </li>
                 </ul>
             </div>   
         </div>
-        <div class="chat-panel">
-            <div class="chat-header">
-                <div class="chat-user-info">
+        <div class="active-chat-panel">
+            <div class="chat-panel-header">
+                <div class="chat-participant-info">
                     <img src="images\Ellipse 14.png" alt="">
                     <span>Lisa Price</span>
                 </div>
-                <div class="chatbox-message-dropdown">
-                    <button class="dropdown-toggle">
+                <div class="chat-settings-dropdown">
+                    <button class="chat-dropdown-toggle">
                         <img src="images\bars-solid (1).svg" alt="Menu">
                     </button>
-                    <ul class="dropdown-menu">
+                    <ul class="chat-dropdown-menu">
                         <li><a href="#">Report</a></li>
                         <li><a href="#">Delete chat</a></li>
                         <li><a href="#">Block user</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="chat-content">
+            <div class="chat-message-list">
                 <!-- <h4 class="chatbox-message-no-message">You don't have message yet!</h4> -->
-                <div class="message-item-sent">
-                    <span class="message-item-text">
+                <div class="chat-message-sent">
+                    <span class="chat-message-text">
                         Salut! Acesta este un mesaj trimis de tine.
                     </span>
-                    <span class="message-item-time">08:14</span>
+                    <span class="chat-message-time">08:14</span>
                 </div>
 
-                <div class="message-item-received">
-                    <span class="message-item-text">
+                <div class="chat-message-received">
+                    <span class="chat-message-text">
                        Salut! Acesta este un mesaj primit de la celălalt utilizator.
                     </span>
-                    <span class="message-item-time">08:14</span>
+                    <span class="chat-message-time">08:14</span>
                 </div>
             </div>
-            <div class="panel">
-                <form class="message-input-container">
+            <div class="chat-input-panel">
+                <form class="chat-input-form">
                     <textarea placeholder="Write here your message" required rows="1"></textarea>
-                    <div class="input-tools">
+                    <div class="chat-input-tools">
                         <input type="file" id="file-upload">
-                        <label for="file-upload" id="upload-btn">Upload File</label>
+                        <label for="file-upload" id="upload-file-button">Upload File</label>
 
-                        <button id="submit" type="submit">
-                            <img src="images\share-solid.svg" alt="" width="30" height="30">
+                        <button id="send-message-button" type="send-message-button">
+                            
+                            <img src="images\share-solid-full.svg" alt="" width="30" height="30">
                         </button>
                     </div>
                 </form>
@@ -122,8 +122,14 @@
 </body>
 
 <script>
-  document.querySelector('.dropdown-toggle').addEventListener('click', function () {
+  document.querySelector('.chat-dropdown-toggle').addEventListener('click', function () {
     this.parentElement.classList.toggle('open');
   });
+
+  const textarea = document.querySelector('textarea');
+textarea.addEventListener('input', () => {
+    textarea.style.height = 'auto';
+    textarea.style.height = textarea.scrollHeight + 'px';
+});
 </script>
 </html>
