@@ -19,7 +19,7 @@ body {
 /* Sidebar */
 
 .sidebar {
-    background-image: linear-gradient(to right top, #100c1c, #120f1f, #141222, #161526, #181729, #19192d, #1b1a30, #1c1c34, #1e1e38, #1f1f3d, #212141, #232346);
+    background-color: #1e2032;
     display: flex;
     flex-direction: column;
 }
@@ -138,6 +138,7 @@ body {
     flex: 1;
     height: 100%;
     overflow: hidden; 
+    border-left: 1px solid #2f3045;
 }
 
 .conversation-filter-tabs {
